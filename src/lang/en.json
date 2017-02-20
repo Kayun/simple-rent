@@ -1,0 +1,41 @@
+{
+    "auth": {
+        "singIn": {
+            "title": "Sing In",
+            "divider": "or",
+            "button": {
+                "submit": "Sing in"
+            },
+            "plc": {
+                "email": "E-mail",
+                "password": "Password"
+            },
+            "link": {
+                "forgot": "Forgot your password?"
+            }
+        },
+        "singUp": {
+            "title": "Sing Up",
+            "divider": "or",
+            "button": {
+                "submit": "Sing up"
+            },
+            "plc": {
+                "email": "E-mail",
+                "password": "Password",
+                "passwordRepeat": "Repeat password"
+            },
+            "link": {}
+        }
+    },
+
+    "header": {
+        "link": {
+            "singIn": "Sing in",
+            "singUp": "Sing up",
+            "support": "Support",
+            "about": "About",
+            "price": "Price"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+transition-single($rule = all, $duration = $transition-duration)
+    transition: $rule $duration $transition-timing
+
+vh-align()
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+v-align()
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+h-align()
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+
+
+// Apply a border and whitespace to any side without destroying the vertical
+// rhythm. The whitespace must be greater than the width of the border.
+apply-side-rhythm-border(side, width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
+  if (not relative-font-sizing) and (font-size is not base-font-size)
+    warn('relative-font-sizing is false but a relative font size was passed to apply-side-rhythm-border')
+  border-{side}-style border-style
+  border-{side}-width font-unit * (width / font-size)
+  padding-{side} $rhythm(lines, font-size, offset = width)
+
+// Apply borders and whitespace equally to all sides.
+rhythm-borders(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
+  if (not relative-font-sizing) and (font-size is not base-font-size)
+    warn('relative-font-sizing is false but a relative font size was passed to rhythm-borders')
+  border-style border-style
+  border-width font-unit * (width / font-size)
+  padding $rhythm(lines, font-size, offset = width)
+
+// Apply a leading border.
+leading-border(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
+  apply-side-rhythm-border(top, width, lines, font-size, border-style)
+
+// Apply a trailing border.
+trailing-border(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
+  apply-side-rhythm-border(bottom, width, lines, font-size, border-style)
+
+// Apply both leading and trailing borders.
+horizontal-borders(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
+  leading-border(width, lines, font-size, border-style)
+  trailing-border(width, lines, font-size, border-style)

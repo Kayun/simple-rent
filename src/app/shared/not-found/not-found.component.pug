@@ -1,0 +1,18 @@
+.error
+  h1.error-code 404
+  p.error-text
+    | Что-то пошло не так... Запрашиваемая вами страница не найдена,
+    | возможно ее не существует или введен неправильный адрес.
+
+  form.search
+    p.search-text
+      | Воспользуйтесь поиском по сайту:
+    sr-input.search-input(placeholder="Поиск", tabindex="1")
+    button.search-submit.button(type="submit", tabindex="2") Искать
+
+  p Предлагаем вам перейти на следующие стриницы:
+
+  ul.link-list
+    li: a.link([routerLink]=["/"]) Главная страница
+    li: a.link Профиль пользователя
+    li: a.link Поиск

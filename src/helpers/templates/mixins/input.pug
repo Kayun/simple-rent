@@ -1,0 +1,9 @@
+//- @param {string} size('big'|'small') - размер поля ввода
+
+mixin input(size)
+  sr-input(class= attributes.class)
+    - delete attributes.class;
+    input(class=`is-${size}`, input-field)&attributes(attributes)
+
+    if block
+      span(input-error): block

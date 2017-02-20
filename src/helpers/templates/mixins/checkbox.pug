@@ -1,0 +1,7 @@
+mixin checkbox(color)
+  sr-checkbox(class= color)
+    input(type="checkbox", checkbox-input)&attributes(attributes)
+
+    if block
+      span(checkbox-label): block
+

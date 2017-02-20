@@ -1,0 +1,82 @@
+@import "~helpers/index"
+
+:host
+    position: relative
+    display: inline-block
+    vertical-align: top
+
+  /deep/ input
+      padding: 0 rem(15px)
+      width: 100%
+      background-color: #ffffff
+      vertical-align: top
+      border: none
+      font-family: $font-family
+      color: $primary-dark
+      box-shadow: inset 0 0 0 2px alpha($primary-gray, .5)
+      appearance: none
+      adjust-font-size-to(base-font-size, 2)
+      transition-single(box-shadow)
+      ellipsis()
+
+      &::placeholder
+          color: alpha($primary-gray, 1)
+          font-family: $font-family
+          font-weight: 300
+          transition-single(color)
+
+      &:hover
+          box-shadow: inset 0 0 0 2px alpha($primary-gray, 1)
+
+      &.is-error
+          box-shadow: inset 0 0 0 2px $secondary-red
+
+          & + .error
+              opacity: 1
+              visibility: visible
+              transition-delay: 0s
+
+      &.is-big
+        padding: 0 rem(20px)
+        adjust-font-size-to(20px, 3)
+        font-weight: 500
+
+        & + .error
+          adjust-font-size-to(base-font-size, 1)
+
+      &:focus
+          box-shadow: inset 0 0 0 2px $secondary-green
+
+          &::placeholder
+              color: alpha($primary-gray, .5)
+
+
+  .error
+      opacity: 0
+      visibility: hidden
+      vertically-align()
+      position: absolute
+      padding: 0 10px
+      height: 100%
+      max-height: 100%
+      min-width: 75%
+      adjust-font-size-to(12px, 1)
+      background-color: $secondary-red
+      left: calc(100% + 20px)
+      transition: opacity $transition-duration $transition-duration, visibility 0 linear .3s
+
+      &:before
+          position: absolute
+          content: ''
+          top: 50%
+          transform: translateY(-50%)
+          left: -10px
+          triangle: 'left' 10px $secondary-red
+
+      &-inner
+          display: inline-block
+          vertical-align: middle
+          vertically-align()
+          max-height: 100%
+          color: #ffffff
+

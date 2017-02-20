@@ -1,0 +1,52 @@
+@import "~helpers/index"
+
+:host
+  position: relative
+  display: block
+  height: 100%
+
+/deep/ .body
+  height: 150px
+
+.auth-tab
+  padding-top: $rhythm(0.5)
+  height: $rhythm(2)
+  padding-bottom: $rhythm(0.4)
+
+  &-item
+    display: inline-block
+    vertical-align: top
+    line-height: $rhythm(1)
+    border-bottom: $rhythm(0.1) solid transparent
+    opacity: .5
+    cursor: pointer
+    transition-single()
+
+    &:hover {
+      opacity: 1
+    }
+
+    & + &
+      margin-left: 20px
+
+    &.active
+      border-bottom-color: $secondary-green
+      color: $secondary-green
+      opacity: 1
+
+.social
+  position: relative
+  text-align: left
+
+  &-button
+    display: inline-block
+    position: relative
+    width: $rhythm(2)
+
+    & + &
+      margin-left: 10px
+
+    .icon
+      vh-align()
+      size: $rhythm(1)
+      fill: #fff

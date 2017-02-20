@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "baseUrl": "./app",
+        "suppressImplicitAnyIndexErrors": true,
+        "lib": [
+            "es6",
+            "dom",
+            "es2017"
+        ],
+        "module": "es6",
+        "sourceMap": true,
+        "target": "es2017",
+        "typeRoots": [
+            "../node_modules/@types"
+        ]
+    }
+}

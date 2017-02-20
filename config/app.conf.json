@@ -1,0 +1,14 @@
+{
+    "root": "src",
+    "outDir": "public",
+    "mapDir": "maps",
+    "devServer": {
+        "host": "localhost",
+        "port": 3000
+    },
+    "index": "index.pug",
+    "main": "main.ts",
+    "style": "styles.styl",
+    "test": "test.ts",
+    "scripts": []
+}

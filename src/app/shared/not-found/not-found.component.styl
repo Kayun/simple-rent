@@ -1,0 +1,50 @@
+@import "~helpers/index"
+
+:host
+  vh-align()
+  width: 600px
+
+.error
+
+  &-code
+    adjust-font-size-to(140px, 6)
+    font-weight: 100
+    text-align: center
+    margin: 0 0 $rhythm(2) 0
+
+  &-text
+    text-align: center
+    margin-bottom: $rhythm(2)
+
+.search
+  width: 100%
+  margin-bottom: $rhythm(1)
+
+  &-text
+    display: inline-block
+    padding-right: $rhythm(1)
+    width: 25%
+    margin: 0
+    line-height: $rhythm(1)
+
+  &-input
+    position: relative
+    z-index: 1
+    width: 50%
+
+  &-submit
+    position: relative
+    z-index: 2
+    width: 25%
+
+.link-list
+  display: flex
+  padding: 0
+  justify-content: center
+
+  li
+    padding: 0 $rhythm(1)
+    list-style: none
+
+    &:not(:last-child)
+      border-right: 2px solid $secondary-gray

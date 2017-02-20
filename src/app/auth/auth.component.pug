@@ -1,0 +1,27 @@
+include /mixins
+
+sr-modal((submit)="submit($event)", (reset)="reset($event)", [options]="{footer: false}")
+  div(modal-title)
+    .auth-tab
+      h4.auth-tab-item((click)="singIn()", [class.active]="isSingIn") Вход
+      h4.auth-tab-item((click)="singUp()", [class.active]="isSingUp") Регистрация
+
+  div(modal-body)
+
+    p(*ngIf="isSingUp") Выберите социальную сеть или сервис через который хотите зарегистрироваться в системе:
+    p(*ngIf="isSingIn") Войдите в систему:
+
+    .social
+      button.button.social-button([ngClass]="{'is-dark': isSingUp, 'is-orange': isSingIn}",type="button", tabindex="1"): +icon("vk")
+      button.button.social-button([ngClass]="{'is-dark': isSingUp, 'is-orange': isSingIn}",type="button", tabindex="2"): +icon("linkedin")
+      button.button.social-button([ngClass]="{'is-dark': isSingUp, 'is-orange': isSingIn}",type="button", tabindex="3"): +icon("facebook")
+      button.button.social-button([ngClass]="{'is-dark': isSingUp, 'is-orange': isSingIn}",type="button", tabindex="4"): +icon("google+")
+      button.button.social-button([ngClass]="{'is-dark': isSingUp, 'is-orange': isSingIn}",type="button", tabindex="5"): +icon("twitter")
+      button.button.social-button([ngClass]="{'is-dark': isSingUp, 'is-orange': isSingIn}",type="button", tabindex="6"): +icon("github")
+
+
+
+  //div(modal-footer)
+    button.button.right(type="submit", *ngIf="isSingUp", tabindex="7") Зарегистрироваться
+    button.button.right(type="submit", *ngIf="isSingIn", tabindex="7") Войти
+

@@ -1,0 +1,42 @@
+.link
+  font-family: $font-family
+  adjust-font-size-to(base-font-size, 1)
+  background-color: transparent
+  border: none
+  padding: 0
+  text-decoration: none
+  line-height: $rhythm(1) - rem(1px)
+  border-bottom: 1px solid alpha($primary-gray, 1)
+  color: alpha($primary-gray, 1)
+  vertical-align: baseline
+  cursor: pointer
+  transition-single(all)
+
+  &:visited
+    border-bottom: 1px solid alpha($primary-gray, 0.5)
+    color: alpha($primary-gray, 0.5)
+
+  &:hover
+  &:focus
+    border-color: transparent
+    color: $secondary-green
+
+  &:active
+    border-color: transparent
+    color: $primary-green
+
+  &_color_blue
+
+    &:hover
+    &:focus
+      border-color: transparent
+      color: $secondary-blue
+
+    &:active
+      border-color: transparent
+      color: $primary-blue
+
+button.link
+  vertical-align: top
+
+

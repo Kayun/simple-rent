@@ -1,0 +1,33 @@
+include /mixins
+
+.panel
+  .panel-header
+
+    .panel-tab(
+      *ngFor="let tab of tabs",
+      [ngClass]="{'panel-tab_state_active': tab.get('isActive'), right: tab.get('isFloat')}",
+    )
+      button.link.link_color_blue(
+        type="button",
+        (click)="tabs.switchTab(tab); currentType = tabs.getCurrentType(); isActive = true"
+      ) {{ tab.get('label') }}
+
+      button.panel-close(
+        type="button",
+        (click)="tabs.disabledAll(); isActive = false; $event.stopPropagation()"
+      ): +icon("close")
+
+  .panel-body([class.panel-body_state_active]="isActive", [ngSwitch]="currentType")
+
+    ng-container(*ngSwitchCase="'news'") Новости
+
+    ng-container(*ngSwitchCase="'popular'") Популярные объявления
+
+    ng-container(*ngSwitchCase="'filter'")
+      +checkbox('blue')(name="checkbox") Test test test
+      br
+      +checkbox(name="checkbox") Test test test
+
+    //sr-select(placeholder="Select..", [options]="options", [style.width]="'250px'")
+      select([(ngModel)]="selectValue", name="select", #select)
+      option(*ngFor="let option of options", [value]="option.value") {{ option.label }}

@@ -1,0 +1,41 @@
+{
+    "auth": {
+        "singIn": {
+            "title": "Вход",
+            "divider": "или",
+            "button": {
+                "submit": "Войти"
+            },
+            "plc": {
+                "email": "Электронная почта",
+                "password": "Пароль"
+            },
+            "link": {
+                "forgot": "Забыли пароль?"
+            }
+        },
+        "singUp": {
+            "title": "Регистрация",
+            "divider": "или",
+            "button": {
+                "submit": "Зарегистрироваться"
+            },
+            "plc": {
+                "email": "Электронная почта",
+                "password": "Пароль",
+                "passwordRepeat": "Повторить пароль"
+            },
+            "link": {}
+        }
+    },
+
+    "header": {
+        "link": {
+            "singIn": "Вход",
+            "singUp": "Регистрация",
+            "price": "Цены",
+            "support": "Поддержка",
+            "about": "О сервисе"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+include /mixins
+
+h1.title
+  | Начните пользоваться вещами совместно.
+  br
+  | Прямо сейчас!
+
+form(#form="ngForm")
+  .search
+    +input('big').search-input(placeholder="Поиск", name="search", type="text", #input, minlength=10)
+      | {{ input.valid }}
+
+    button.search-submit.button.is-big(type="submit", tabindex="2", name="submit", (click)="find(form.value)") Искать
+
+  sr-main-panel

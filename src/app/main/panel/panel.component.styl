@@ -1,0 +1,81 @@
+@import "~helpers/index"
+
+:host
+  display: block
+
+  .panel
+
+    &-header
+      clearfix()
+
+    &-tab
+      position: relative
+      display: inline-block
+      padding: $rhythm(0.5) $rhythm(1)
+      padding-right: $rhythm(2.5)
+      line-height: $rhythm(1)
+      background-color: transparent
+      transition-single(background-color)
+
+      &.right
+        padding-left: $rhythm(2.5)
+        padding-right: $rhythm(1)
+
+        .panel-close
+          right: auto
+          left: $rhythm(1)
+
+      &_state_active
+        background-color: alpha($primary-blue, .25)
+
+        .link
+          color: $primary-blue
+          border-color: transparent
+          pointer-events: none
+
+        .panel-close
+          transition-delay: 0s
+          opacity: 1
+          visibility: visible
+
+      .link
+        font-weight: 500
+        transition-single()
+
+    &-body
+      padding: $rhythm(1)
+      height: 350px
+      background-color: alpha($primary-blue, .25)
+      opacity: 0
+      visibility: hidden
+      transition: opacity .3s ease, visibility 0s linear .3s
+
+      &_state_active
+        transition-delay: 0s
+        opacity: 1
+        visibility: visible
+
+    &-close
+      border: none
+      background-color: transparent
+      padding: 0
+      v-align()
+      right: $rhythm(1)
+      opacity: 0
+      line-height: $rhythm(0.5)
+      visibility: hidden
+      transition: opacity .3s ease, visibility 0s linear .3s
+
+      .icon
+        size: $rhythm(0.5)
+        fill: $primary-blue
+
+      &:hover
+
+        .icon
+          fill: $secondary-red
+
+      &:focus
+
+        .icon
+          fill: $primary-red

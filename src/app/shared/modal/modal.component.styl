@@ -1,0 +1,66 @@
+@import "~helpers/index"
+
+:host
+  position: relative
+  display: block
+  width: $rhythm(26)
+  background-color: #ffffff
+
+  &.without-footer
+
+    form
+      padding-bottom: 0
+
+    .body
+      padding-bottom: $rhythm(1)
+      border-bottom: none
+
+
+form
+  position: relative
+  padding: 0 $rhythm(1)
+  padding-bottom: $rhythm(4)
+
+.header
+  position  relative
+
+.close
+  position: absolute
+  background-color: transparent
+  padding: 0
+  border: none
+  top: 12px
+  right: 0
+  cursor: pointer
+
+  &:hover
+
+    .icon
+      fill: $secondary-red
+
+  &:focus
+
+    .icon
+      fill: $primary-red
+
+  .icon
+    size: $rhythm(0.75)
+    fill: $primary-dark
+
+/deep/ h4
+  margin: 0
+  adjust-font-size-to(18px, 2)
+
+.body
+  horizontal-borders()
+  border-color: $primary-gray
+
+.footer
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  padding: $rhythm(1)
+
+:deep p
+  margin-bottom: $rhythm(1)

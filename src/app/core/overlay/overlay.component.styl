@@ -1,0 +1,25 @@
+@import "~helpers/index"
+
+:host
+  display: block
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  visibility: hidden
+  opacity: 0
+  background-color: alpha($secondary-dark, 75%)
+  transition: opacity $transition-duration, visibility 0s linear $transition-duration
+
+:host(.is-visible)
+  visibility: visible
+  transition-delay: 0s
+  opacity: 1
+
+.inner
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)

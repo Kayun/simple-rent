@@ -1,0 +1,14 @@
+include /mixins
+
+form(#modal, (submit)="$event.preventDefault();")
+  .header
+    ng-content(select="[modal-title]")
+
+    button.close(type="button", (click)="close()")
+      +icon("close")
+
+  .body
+    ng-content(select="[modal-body]")
+
+  .footer(*ngIf="options.footer")
+    ng-content(select="[modal-footer]")
